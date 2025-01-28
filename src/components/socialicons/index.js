@@ -14,6 +14,7 @@ import {
 } from "react-icons/fa";
 import { socialprofils } from "../../content_option";
 
+
 const ICON_MAPPING = {
   default: FaCircle,
   facebook: FaFacebookF,
@@ -35,14 +36,14 @@ export const Socialicons = (params) => {
           const IconComponent = ICON_MAPPING[platform] || ICON_MAPPING.default;
           return (
             <li key={platform}>
-              <a href={url}>
+              <a href={url} target="_blank">
                 <IconComponent />
               </a>
             </li>
           );
         })}
       </ul>
-      <p>Follow Me</p>
+      <p>Follow</p>
     </div>
   );
 };

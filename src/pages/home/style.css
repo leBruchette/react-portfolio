@@ -37,19 +37,51 @@ section {
     margin-top: -60px;
 }
 
-@media (max-width:991.98px) {
+@media (min-width: 991.98px) {
+    .background {
+        background-image: url('../../assets/images/namur_pano.jpg');
+        background-size: cover; /* Optional: This makes the image cover the entire area */
+        background-position: center; /* Optional: This centers the image */
+        background-repeat: no-repeat; /* Optional: This prevents the image from repeating */
+        width: 10vw; /* Set the width to the full viewport width */
+        height: 10vh; /* Set the height to the full viewport height */
+        z-index: -1;
+    }
+}
+
+
+/* Basic styles for the image container */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Center the image vertically */
+}
+
+/* Styles to make the image circular */
+.circle-image {
+    width: 200px; /* Adjust as needed */
+    height: 200px; /* Adjust as needed */
+    border-radius: 50%; /* This makes the image circular */
+    object-fit: cover; /* Ensures the image covers the entire area */
+    border: 5px solid #000; /* Optional: Add a border around the circle */
+}
+
+
+@media (max-width: 991.98px) {
     .intro_sec {
         display: block;
-        height: auto!important;
+        height: auto !important;
     }
 }
 
 .intro_sec .text,
 .intro_sec .h_bg-image {
-    width: 50%;
+    width: 100%;
+    width: 100%;
 }
 
-@media (max-width:991.98px) {
+@media (max-width: 991.98px) {
     .intro_sec .text,
     .intro_sec .h_bg-image {
         width: 100%;
@@ -57,20 +89,20 @@ section {
 }
 
 .intro_sec .intro {
-    max-width: 450px;
+    max-width: 650px;
     margin: 0 auto;
 }
 
-@media (max-width:991.98px) {
+@media (max-width: 991.98px) {
     .intro_sec .intro {
-        max-width: 700px;
+        max-width: 500px;
         padding-left: 20px;
         padding-right: 20px;
     }
 }
 
 .intro_sec .intro .feature .wrap-icon {
-    background: 0 0!important;
+    background: 0 0 !important;
     width: auto;
     height: auto;
     margin-bottom: 0;
@@ -91,11 +123,14 @@ section {
     font-weight: 700;
 }
 
+
 .intro_sec .h_bg-image {
     background-size: cover;
-    background-position: center;
-    min-height: 700px;
-    position: relative;
+    background-position: top;
+    max-height: 30%;
+    max-width: 100%;
+    position: fixed;
+    right: 0;
 }
 
 .ac_btn {
@@ -115,63 +150,7 @@ section {
 }
 
 .ac_btn:hover {
-    box-shadow: 8px 8px 0px var(--text-color), -8px -8px 0px var(--text-color);
-}
-
-.ac_btn:hover .one {
-    opacity: 1;
-    transform: translate3d(0px, 0px, 0px);
-}
-
-.ac_btn:hover .two {
-    transform: translate3d(0px, 0px, 0px);
-}
-
-.ac_btn:hover .three {
-    transform: translate3d(0px, 0px, 0px);
-}
-
-.ac_btn:hover .four {
-    transform: translate3d(0px, 0px, 0px);
-}
-
-.ac_btn .ring {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: transparent;
-    top: 0;
-    left: 0;
-    transform: translate3d(0px, 90px, 0px);
-}
-
-.ac_btn .one {
-    background-color: #000;
-    transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
-    z-index: -3;
-    z-index: -4;
-}
-
-.ac_btn .two {
-    background-color: var(--primary-color);
-    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-    z-index: -3;
-}
-
-.ac_btn .three {
-    background-color: var(--secondary-color);
-    z-index: -2;
-    transition: all 0.7s cubic-bezier(0.55, 0, 0.1, 1);
-    z-index: -3;
-}
-
-#button_p {
-    background: var(--secondary-color);
-    color: var(--primary-color);
-}
-
-#button_h:hover {
-    color: var(--primary-color)
+    box-shadow: 4px 4px 0px var(--text-color), -4px -4px 0px var(--text-color);
 }
 
 .intro_sec .h_bg-image .block {
@@ -192,12 +171,13 @@ section {
     justify-content: center;
 }
 
-@media (max-width:991.98px) {
+@media (max-width: 991.98px) {
     .intro_sec .h_bg-image {
         height: 600px;
         min-height: 75vh;
         margin-bottom: 30px;
     }
+
     .intro_sec .h_bg-image .block {
         top: unset;
         bottom: 0;

@@ -1,3 +1,38 @@
+/* Basic styles for the image container */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Center the image vertically */
+}
+
+/* Styles to make the image circular */
+
+.circle-image {
+    width: 105px; /* Adjust as needed */
+    height: 105px; /* Adjust as needed */
+    border-radius: 50%; /* This makes the image circular */
+    object-fit: cover; /* Ensures the image covers the entire area */
+    border: 3px solid #000; /* Optional: Add a border around the circle */
+    margin-left: -14px;
+}
+
+@media (max-width: 991.98px) {
+    /*.circle-image {*/
+    /*    display: none;*/
+    /*}*/
+
+    .circle-image {
+        width: 60px; /* Adjust as needed */
+        height: 60px; /* Adjust as needed */
+        border-radius: 50%; /* This makes the image circular */
+        object-fit: cover; /* Ensures the image covers the entire area */
+        border: 3px solid #000; /* Optional: Add a border around the circle */
+        margin-left: -5px;
+    }
+}
+
+
 .site__header {
     top: 10px;
     padding-left: 10px;
@@ -25,7 +60,7 @@
     padding: 5px 15px;
     margin: 0;
     border: unset;
-    background: var(--primary-color);
+    background: transparent;
     font-size: 1.25rem;
     font-family: Marcellus;
     color: var(--text-color-2);
@@ -165,13 +200,14 @@
     .menu__container {
         margin-left: 33.3333%;
     }
+
     .the_menu {
         padding-top: 10vh;
         padding-bottom: 10vh;
     }
 }
 
-.the_menu .menu_item>a {
+.the_menu .menu_item > a {
     color: var(--text-color-2);
     line-height: 1;
     font-size: 2rem;
@@ -183,12 +219,12 @@
     font-family: Marcellus;
 }
 
-.the_menu .menu_item>a:hover {
+.the_menu .menu_item > a:hover {
     color: var(--text-color-3);
 }
 
 @media (min-width: 768px) {
-    .the_menu .menu_item>a {
+    .the_menu .menu_item > a {
         font-size: 4.8vw;
     }
 }
