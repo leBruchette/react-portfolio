@@ -19,11 +19,11 @@ const Headermain = () => {
       <header className="fixed-top site__header">
         <div className="d-flex align-items-center justify-content-between">
 
-          <Link to="/"
-                className="navbar-brand nav_ac"
-                onClick={(e) => { if (window.location.pathname === "/") e.preventDefault();}}>
-              <img src={ profileImage } className="circle-image"/>
-          </Link>
+          {/*<Link to="/"*/}
+          {/*      className="navbar-brand nav_ac"*/}
+          {/*      onClick={(e) => { if (window.location.pathname === "/") e.preventDefault();}}>*/}
+          {/*    <img src={ profileImage } className="circle-image"/>*/}
+          {/*</Link>*/}
           <div className="d-flex align-items-center">
           <Themetoggle />
           <button className="menu__button  nav_ac" onClick={handleToggle}>
