@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
     BrowserRouter as Router,
@@ -8,7 +8,9 @@ import withRouter from "../hooks/withRouter";
 import AppRoutes from "./routes";
 import Headermain from "../header";
 import "./App.css";
-import withPreloadImages from "../hooks/withPreloadImages";
+import ImagePreloader from "../components/imagepreloader";
+import profileImage from "../assets/images/camping.jpeg"
+import backgroundImage from "../assets/images/namur_pano_gs.jpeg";
 
 function _ScrollToTop(props) {
     const {pathname} = useLocation();
@@ -20,32 +22,22 @@ function _ScrollToTop(props) {
 
 const ScrollToTop = withRouter(_ScrollToTop);
 
-function App() {
+
+export default function App() {
+    const [imagesLoaded, setImagesLoaded] = useState(false);
+    const imageUrls = [
+        profileImage,
+        backgroundImage
+    ];
+
     return (
         <Router basename={process.env.PUBLIC_URL}>
+            <ImagePreloader images={imageUrls} onLoad={() => setImagesLoaded(true)} />
+            {imagesLoaded && (
             <ScrollToTop>
-                <Headermain/>
-                <AppRoutes/>
-            </ScrollToTop>
+                <Headermain />
+                <AppRoutes />
+            </ScrollToTop> )}
         </Router>
     );
-}
-
-const imagesToPreload = [
-    '/assets/images/camping.jpeg',
-    '/assets/images/namur_pano_gs.jpeg',
-];
-
-const AppWithPreloadImages = withPreloadImages(App, imagesToPreload);
-export default AppWithPreloadImages;
-// export default function App() {
-//   return (
-//     <Router basename={process.env.PUBLIC_URL}>
-//       <PreloadImages/>
-//       <ScrollToTop>
-//         <Headermain />
-//         <AppRoutes />
-//       </ScrollToTop>
-//     </Router>
-//   );
-// }
+};

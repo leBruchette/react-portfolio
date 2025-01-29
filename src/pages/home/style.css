@@ -39,7 +39,7 @@ section {
 
 @media (min-width: 991.98px) {
     .background {
-        /*background-image: url('../../assets/images/namur_pano_gs.jpeg');*/
+        background-image: url('../../assets/images/namur_pano_gs.jpeg');
         background-size: cover; /* Optional: This makes the image cover the entire area */
         background-position: center; /* Optional: This centers the image */
         background-repeat: no-repeat; /* Optional: This prevents the image from repeating */
