@@ -19,6 +19,10 @@ const contact = {
     linkedin: "https://www.linkedin.com/in/mpbruzina",
 }
 
+const resume = {
+    description: "To request a copy of my resume, please provide your email address and I'll send it over.",
+}
+
 const dataabout = {
     title: "Background",
     aboutme: "I began my career as a full stack developer, developing in full stack roles using various Java/JVM based ecosystems. Over time, I've transitioned to more of a backend and DevOps focus, driven by a passion for API development and system architecture.  Most recently, my focus has been infrastructure and IaC solutioning, including containerization and CI/CD automation and tooling.  With my combined experience in full stack development and DevOps, I bring a comprehensive perspective to building and maintaining robust, scalable systems.",
@@ -121,6 +125,7 @@ const socialprofils = {
 export {
     meta,
     contact,
+    resume,
     dataabout,
     worktimeline,
     skills_1,

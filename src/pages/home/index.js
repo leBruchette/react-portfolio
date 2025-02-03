@@ -3,8 +3,6 @@ import "./style.css";
 import {Helmet, HelmetProvider} from "react-helmet-async";
 import {introdata, meta} from "../../content_option";
 import {Link} from "react-router-dom";
-import pdf from "../../assets/mpbruzina-20241120.pdf";
-
 
 export const Home = () => {
     return (
@@ -33,9 +31,11 @@ export const Home = () => {
                                             Contact
                                         </div>
                                     </Link>
-                                    <div className="ac_btn btn button_p">
-                                        <a href={pdf} download="mbruzina-resume.pdf">Download Resume</a>
-                                    </div>
+                                    <Link to="/resume">
+                                        <div className="ac_btn btn button_p">
+                                            Resume
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

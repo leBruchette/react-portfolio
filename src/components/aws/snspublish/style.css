@@ -1,0 +1,14 @@
+.resumeRequest {
+    margin-right: 10px;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+.resumeResponse {
+    margin-top: 5px;
+}
+
+input::placeholder {
+    color: var(--primary-color);
+    opacity: 0.35;
+    font-weight: bold;
+}
