@@ -18,7 +18,7 @@ const SNSMessageSender = () => {
         }
 
         const client = new SNSClient({
-            region: "us-east-1",
+            region: process.env.REACT_APP_AWS_REGION,
             credentials: fromCognitoIdentityPool({
                 client: new CognitoIdentityClient({
                     region: process.env.REACT_APP_AWS_REGION,
