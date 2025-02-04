@@ -21,14 +21,15 @@ const SNSMessageSender = () => {
             region: "us-east-1",
             credentials: fromCognitoIdentityPool({
                 client: new CognitoIdentityClient({
-                    region: "us-east-1",
+                    region: process.env.REACT_APP_AWS_REGION,
                 }),
-                identityPoolId: "us-east-1:97395a86-1769-4ebd-9bd1-6703cf5ad327",
-                accountId: "689385914997"
+
+                identityPoolId: process.env.REACT_APP_COGNITO_IDENTITY_POOL_ID,
+                accountId: process.env.REACT_APP_AWS_ACCOUNT_ID
             })
         });
         const params = {
-            TopicArn: "arn:aws:sns:us-east-1:689385914997:mailer-nodejs-email-recipients-topic",
+            TopicArn: process.env.REACT_APP_RESUME_REQUEST_TOPIC_ARN,
             Message: ".",
             MessageAttributes: {
                 'email': {
